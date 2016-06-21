@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+        .top{margin-top:20px;}
+        .content {position:absolute;top:50%;width:100%;left:0;text-align:center;margin-top:-135px;}
+        .logo {font:100px 'Italiana', sans-serif;}
+        .wel {margin-top:20px;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="pull-right top">
+        <div class="dropdown">
+            <button type="button" class="btn btn-success btn-group-lg dropdown-toggle" id="dropdownMenu1"
+                    data-toggle="dropdown">
+                Catalog
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="/">Home</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="/works">Works</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="/blogs">Blog</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="/about">About me</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="/contact">Contact me</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h1 class="logo" id="logo">SixStone</h1>
+        <p class="wel">SixStone —— Welcome to my world</p>
+    </div>
+</div>
+<!--百度统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?81059dc28b5add1b9ef23434c780dcf0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

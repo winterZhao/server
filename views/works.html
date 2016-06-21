@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+       .content{padding: 66px 0 130px;}
+    </style>
+</head>
+<body>
+<%-include header.html %>
+<div class="container content">
+    <div class="row">
+        <%  workList.forEach(function(item,index){  %>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="<%= item.picurl %>" alt="...">
+                <div class="caption">
+                    <h3 class="text-center"><%= item.title%></h3>
+                    <p class="text-center"><%= item.description %></p>
+                    <p><a href="<%= item.demourl %>" class="btn btn-primary col-md-offset-3" role="button">demo</a> <a href="<%= item.viewurl %>" class="btn btn-primary" role="button">演示</a></p>
+                </div>
+            </div>
+        </div>
+        <%   })   %>
+    </div>
+</div>
+
+
+<%-include footer.html %>
+</body>
+</html>
