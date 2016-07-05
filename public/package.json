@@ -1,0 +1,17 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "handlebars": "^4.0.5",
+    "jquery": "^1.11.0",
+    "koa-hbs": "^0.8.1"
+  }
+}
