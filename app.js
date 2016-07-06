@@ -1,70 +1,30 @@
-var express = require('express');
+"use strict";
+
+var app =require('koa')();
+var staticServer = require('koa-static');
+var logger = require('koa-logger');
+var render = require('koa-ejs');
+var onerror = require('koa-onerror');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mysql = require('mysql');
-
-var routes = require('./routes/index');
-var works = require('./routes/works');
-var contact = require('./routes/contact');
-
-var app = express();
+var routes = require('./routers');
 
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.engine('.html',require('ejs').renderFile);
-app.set('view engine', 'html');
-//app.set('view engine', 'ejs');
 
+onerror(app);
+app.use(logger());
+app.use(staticServer(path.join(__dirname,'public')));
 
-// uncomment after placing y our favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-app.use(logger('dev'));
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-app.use('/', routes);
-app.use('/works', works);
-app.use('/contact',contact);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+render(app, {
+    root: path.join(__dirname, 'views'),
+    layout: false,
+    viewExt: 'html',
+    cache: false,
+    debug: true
 });
 
-// error handlers
+routes(app);
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.listen(3000,function(){
+    console.log('ok');
 });
 
-
-module.exports = app;

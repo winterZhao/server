@@ -1,19 +1,10 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <style>
-        .container .main{position:relative;margin-top:72px;height:510px;width:100%;}
-        .main .contact{position:relative;top:50%;left:50%;width:40%;margin:-90px 0 0 -20%;}
-        .main .contact caption {color:#000;}
-    </style>
-</head>
-<body>
-<%-include header.html %>
+<%- include header.html %>
+<style>
+    .container .main{position:relative;margin-top:72px;height:594px;width:100%;}
+    .main .contact{position:relative;top:50%;left:50%;width:40%;margin:-90px 0 0 -20%;}
+    .main .contact caption {color:#000;}
+</style>
+
 <div class="container">
     <div class="jumbotron main">
         <table class="table text-center contact">
@@ -32,11 +23,10 @@
             </tr>
             <tr class="danger">
                 <td>地址</td>
-                <td>杭州市滨江区/td>
+                <td>杭州市滨江区</td>
             </tr>
         </table>
     </div>
 </div>
-<%-include footer.html %>
-</body>
-</html>
+<%- include footer.html %>
+

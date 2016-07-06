@@ -1,8 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%>|sixStone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="sixStone,博客,blog,作品,javascript" />
+    <meta name="description" content="sixStone的个人博客，专注于javascript前后端开发技术的探索" />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?81059dc28b5add1b9ef23434c780dcf0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
 <style>
     .top .list-item-inner{line-height:28px;color:rgba(255,255,255,0.5)}
     .top a.list-item-inner:hover {color:#fff;background-color:#000;}
     .top a.list-item-inner:visited {color:#fff;background-color:#000;}
-    .top .list-item-wel {margin-bottom:0;line-height:50px;color:rgba(255,255,255,0.5)}
+    .top .list-item-wel {margin-bottom:0;line-height:28px;color:rgba(255,255,255,0.8)}
     .top a.current {background-color:#080808;color:#fff;}
 </style>
 <div class="top">
@@ -11,22 +35,27 @@
             <ul class="nav nav-pills">
                 <li class="list-item"  role="presentation"><a class="list-item-inner" href="/">sixStone's world</a></li>
                 <li class="list-item" role="presentation"><a class="list-item-inner current" href="/">Home</a></li>
+                <li class="list-item" role="presentation"><a class="list-item-inner" href="/articles">Articles</a></li>
                 <li class="list-item" role="presentation"><a class="list-item-inner" href="/works">Works</a></li>
-                <li class="list-item" role="presentation"><a class="list-item-inner" href="/blogs">Blog</a></li>
-                <li class="list-item" role="presentation"><a class="list-item-inner" href="/about">About me</a></li>
                 <li class="list-item" role="presentation"><a class="list-item-inner" href="/contact">Contact me</a></li>
-                <li class="list-item pull-right" role="presentation"><p class="list-item-wel">Welcome to my world</p></li>
+                <li class="list-item pull-right" role="presentation"><a class=" list-item-inner list-item-wel" href="https://github.com/winterZhao?tab=repositories" target="_blank">Github</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<!--<script>-->
-    <!--$(".list-item-inner").click(function(e){-->
-        <!--$(".list-item-inner").each(function(index,item){-->
-            <!--if($(item).hasClass('current')){-->
-                <!--$(item).removeClass('current');-->
-            <!--}-->
-        <!--});-->
-        <!--$(e.target).addClass('current');-->
-    <!--})-->
-<!--</script>-->
+<script>
+    var pathname = window.location.pathname;
+    $('.list-item-inner').each(function(index,item){
+        if($(this).hasClass('current')){
+            $(this).removeClass('current');
+        }
+    });
+    if(pathname.indexOf('articles') > -1 ){
+        $('.list-item-inner').eq(2).addClass('current');
+    } else if (pathname.indexOf('works') > -1){
+        $('.list-item-inner').eq(3).addClass('current');
+    } else if (pathname.indexOf('contact') > -1) {
+        $('.list-item-inner').eq(4).addClass('current');
+    }
+</script>
+

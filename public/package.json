@@ -10,6 +10,12 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.6",
+<<<<<<< HEAD
+    "handlebars": "^4.0.5",
+    "jquery": "^1.11.0",
+    "koa-hbs": "^0.8.1"
+=======
     "jquery": "^1.11.0"
+>>>>>>> d60c399a11d62dc6d72c6b7b298c4350aeeeee79
   }
 }
