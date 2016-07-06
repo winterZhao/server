@@ -7,6 +7,5 @@ module.exports = function (app) {
         let rows = yield p.query('select * from works');
         yield this.body = rows;
     });
-
     app.use(router.routes());
 };
