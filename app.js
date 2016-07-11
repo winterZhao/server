@@ -8,8 +8,6 @@ var onerror = require('koa-onerror');
 var path = require('path');
 var routes = require('./routers');
 
-
-
 onerror(app);
 app.use(logger());
 app.use(staticServer(path.join(__dirname,'public')));
@@ -23,6 +21,14 @@ render(app, {
 });
 
 routes(app);
+
+var fork = require('child_process').fork;
+var cronJob = require('cron').CronJob;
+var job = new cronJob('* */30 * * * *',function(){
+   fork ('./task/crawl.js');
+
+},null,true);
+
 
 app.listen(3000,function(){
     console.log('ok');

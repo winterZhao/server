@@ -9,8 +9,9 @@ const options = {
     password : 'root',
     database : 'server'
 };
-const pool = mysql.createPool(options);
 
+
+const pool = mysql.createPool(options);
 const p = wrapper(pool);
 
 module.exports = p;
