@@ -62,7 +62,14 @@ const getRequestData =
             }
         })
         .then(function(){
-                process.exit();
+                p.query('select * from articles',function(err,data){
+                    console.log(data);
+                })
+        })
+        .then(function(){
+                setTimeout(function(){
+                    process.exit();
+                },600)
         })
         .catch(function(err){
             throw err;

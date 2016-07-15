@@ -11,7 +11,7 @@
                 <% articles.forEach(function(item){ %>
                 <li class="list-group-item">
                     <div class="jumbotron mgb">
-                        <h3><a href="<%=item.link%>"><%= item.title %></a></h3>
+                        <h3><a href="<%=item.link%>" target="_blank"><%= item.title %></a></h3>
                         <p><%-item.description %></p>
                     </div>
                 </li>
@@ -29,11 +29,4 @@
     </div>
 </div>
 <%- include footer.html %>
-<script>
-    if($('body').scrollTop()>100){
-        $('#dialog').css({
-            'position':'fixed',
-            'marginTop':'300'
-        })
-    }
-</script>
+

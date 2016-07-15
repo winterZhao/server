@@ -1,12 +1,12 @@
 "use strict";
 
-var app =require('koa')();
-var staticServer = require('koa-static');
-var logger = require('koa-logger');
-var render = require('koa-ejs');
-var onerror = require('koa-onerror');
-var path = require('path');
-var routes = require('./routers');
+const app =require('koa')();
+const staticServer = require('koa-static');
+const logger = require('koa-logger');
+const render = require('koa-ejs');
+const onerror = require('koa-onerror');
+const path = require('path');
+const routes = require('./routers');
 
 onerror(app);
 app.use(logger());
@@ -22,9 +22,9 @@ render(app, {
 
 routes(app);
 
-var fork = require('child_process').fork;
-var cronJob = require('cron').CronJob;
-var job = new cronJob('* */30 * * * *',function(){
+let fork = require('child_process').fork;
+let cronJob = require('cron').CronJob;
+let job = new cronJob('* */30 * * * *',function(){
    fork ('./task/crawl.js');
 
 },null,true);
