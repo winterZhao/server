@@ -41,8 +41,7 @@ const ArticleModel = sequelize.define('article',{
     description : Sequelize.TEXT('tiny') ,
     content : Sequelize.TEXT,
     nav : Sequelize.STRING(40),
-    menu : Sequelize.STRING(100),
-    menu_id : Sequelize.INTEGER
+    menu : Sequelize.STRING(100)
 },{
     underscored: true,
     timestamps: false,
@@ -73,7 +72,6 @@ co(function*(){
             obj2.gmt_create = new Date();
             obj2.gmt_modified = new Date();
             obj2.nav = obj.nav;
-            obj2.nav_id = result.dataValues.id;
             obj2.menu = tur.name;
             yield MenuModel.create(obj2);
         }
