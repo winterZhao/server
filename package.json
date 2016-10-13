@@ -20,8 +20,8 @@
     "koa-static-cache": "^3.1.7",
     "koa-views": "^4.1.0",
     "koa-cors": "0.0.16",
-    "mysql": "^2.11.1",
-    "sequelize": "^3.24.2",
+    "mysql": "2.11.1",
+    "sequelize": "3.24.2",
     "markdown": "^0.5.0",
     "co": "^4.6.0"
 
