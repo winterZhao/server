@@ -71,8 +71,6 @@ const nav_config = [
         ]
     }];
 
-
-
 module.exports = {
     NAV_CONFIG: nav_config
 };

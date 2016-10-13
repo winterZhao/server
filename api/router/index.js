@@ -9,10 +9,10 @@ module.exports = function(app){
         origin : 'http://www.zhaoleilei.cn'
     }));
 
-    router.get('/list',Service.getList);
-    router.get('/nav',Service.getNav);
-    router.get('/menu',Service.getMenu);
-    router.get('/content',Service.content);
+    router.get('/self/list',Service.getList);
+    router.get('/self/nav',Service.getNav);
+    router.get('/self/menu',Service.getMenu);
+    router.get('/self/content',Service.content);
 
 
     app.use(router.routes())

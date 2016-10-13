@@ -19,7 +19,7 @@ class Article {
     }
     getNav() {
         $.ajax({
-            url : 'http://localhost:202/nav',
+            url : 'http://api.zhaoleilei.cn/self/nav',
             type : 'get'
         }).done((data)=>{
             this.navTemplate(data);
