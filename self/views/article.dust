@@ -1,0 +1,46 @@
+{> "views/layout.dust"/}
+
+
+
+{<title}
+    {#result}
+        <title>{#title}{.}{/title}|一块顽石</title>
+        <meta name="keywords" content="web前端,web全栈,web网站开发" />
+        <meta name="description" content="顽石博客,在这儿你能找到Node.js,能找到JavaScirpt,还有Linux和数据库等知识." />
+    {/result}
+{/title}
+
+{<css}
+
+{/css}
+
+
+{<crumb}
+    {#result}
+        <ol class="breadcrumb breadcrumb-mg">
+            <li><a href="/">Home</a></li>
+            <li><a href="javasccript:;">{#nav}{.}{/nav}</a></li>
+            <li class="active">{#menu}{.}{/menu}</li>
+        </ol>
+    {/result}
+{/crumb}
+{<articalList}
+    {#result}
+        <div class='content'>
+            <h1>{#title}{.}{/title}</h1>
+            <p style='padding-bottom:20px;margin-bottom:30px;border-bottom:1px dashed #ccc;'><span class='glyphicon glyphicon-time title='发布时间'></span>&nbsp;<span>{#gmt_modified}{.}{/gmt_modified}</span>{~s}{~s}<span class='glyphicon glyphicon-eye-open' title='阅读'></span>{~s}<span>{#view}{.}{/view}</span></p>
+            <p class="list-group-item-text" id='content'>{#content}{.}{/content}</p>
+        </div>
+    {/result}
+{/articalList}
+
+{<pagination}
+
+
+{/pagination}
+
+
+{<js}
+
+    <script src='/build/js/article.js'></script>
+{/js}

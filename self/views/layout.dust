@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {+title}{/title}
+    <!--显示在窗口中-->
+    <link rel="Shortcut Icon" href="/build/images/favicon.ico"/>
+    <!--显示在收藏夹中-->
+    <link rel="Bookmark" href="/build/images/favicon.ico"/>
+    <link rel='stylesheet' href='/build/css/main-min.css' />
+    <link rel='stylesheet' href='/build/css/common.css' />
+    {+css}{/css}
+</head>
+<body>
+<header>
+     <div class="container">
+          <div class='row'>
+              <div class="navbar navbar-default" role="navigation">
+                   <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                             <img src="/build/images/logo.png" alt="optional logo" height="90" width="90">
+                             <span class="logo_title"><strong>一块顽石</strong></span>
+                             <span class="logo_subtitle logo_description">懵懂地前行：学习,记录,整理,分享</span>
+                        </a>
+                        <a class="btn btn-navbar btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                             <span class="nb_left pull-left">
+                                  <span class="fa fa-reorder"></span>
+                             </span>
+                             <span class="nb_right pull-right">menu</span>
+                        </a>
+                   </div>
+                   <div class="collapse navbar-collapse">
+                   <ul class="nav pull-right navbar-nav" id='nav'></ul>
+
+                   </div>
+              </div>
+          </div>
+     </div>
+</header>
+<div class='container'>
+    <div class='row'>
+        {+crumb}{/crumb}
+    </div>
+    <div class='row'>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 col-pd0">
+            {+articalList}{/articalList}
+            {+pagination}{/pagination}
+        </div>
+        <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-4 " style='padding-right:0;padding-left:20px;'>
+            <section class='form-wrapper' style='padding-bottom:50px;' id = 'search-wrapper'>
+                <div class='col-md-10  col-pd0'>
+                    <input type="text" class="form-control" id="search-text" placeholder="关键字">
+                </div>
+                <button class='btn btn-default pull-right' id='search'>搜索</button>
+            </section>
+             {+category}{/category}
+
+        </aside>
+
+    </div>
+</div>
+{+content}{/content}
+
+<footer>
+<div class='container'>
+   <div class='copy-right-wrapper'>
+        <p class='copy-right'>Copyright ©2015-2016 www.zhaoleilei.com all rights reserved浙ICP备16019738号-1</p>
+   </div>
+
+</div>
+</footer>
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+{+js}{/js}
+
+
+</body>
+</html>

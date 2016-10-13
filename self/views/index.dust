@@ -1,0 +1,41 @@
+{> "views/layout.dust"/}
+
+{<title}
+<title>首页</title>
+<meta name="keywords" content="web全站开发,web全栈开发,web前后端开发" />
+<meta name="description" content="web全栈开发相关知识的学习与分享" />
+{/title}
+
+{<css}{/css}
+
+
+{<crumb}
+    <ol class="breadcrumb breadcrumb-mg" id='breadcrumb'>
+
+    </ol>
+{/crumb}
+
+{<articalList}
+    <div class="list-group content-wrapper" id='list-group'>
+        <div class='text-center'>
+            <img src='/build/images/loading.gif'/>
+        </div>
+    </div>
+{/articalList}
+
+{<pagination}
+   <nav id='pagination'></nav>
+{/pagination}
+
+{<category}
+<section style='margin-top:20px;border-bottom:1px solid #ccc;' id='category'>
+
+</section>
+{/category}
+
+
+
+{<js}
+
+<script src='/build/js/list.js'></script>
+{/js}
