@@ -52,7 +52,7 @@ class List {
 
     getNav() {
         $.ajax({
-            url : 'http://localhost:202/nav',
+            url : 'http://api.zhaoleilei.cn/self/nav',
             type : 'get'
         }).done((data)=>{
             this.navTemplate(data);
@@ -86,7 +86,7 @@ class List {
     getMenu() {
         var nav = $('#nav .active a').html();
         $.ajax({
-            url : 'http://localhost:202/menu?nav=' + nav,
+            url : 'http://api.zhaoleilei.cn/self/menu?nav=' + nav,
             type : 'get'
         }).done((data)=>{
             this.menuTemplate(data);
@@ -115,7 +115,7 @@ class List {
         var menu = $('#category .list-group-item-info a').html();
         var searchText= $('#search-text').val();
         var page = $('#pagination .current a').html() || 1;
-        var url = 'http://localhost:202/list?first=' + this.first + '&page='+page;
+        var url = 'http://api.zhaoleilei.cn/self/list?first=' + this.first + '&page='+page;
         if (searchText){
             url += '&search=' + searchText;
         } else if (menu){

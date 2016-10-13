@@ -25,7 +25,7 @@ class Article {
         var id = this.GetQueryString('id');
         if (id){
             $.ajax({
-                url : 'http://localhost:202/content?id='+id,
+                url : 'http://api.zhaoleilei.cn/self/content?id='+id,
                 type : 'get'
             }).then((json)=>{
                 if (json.id){
