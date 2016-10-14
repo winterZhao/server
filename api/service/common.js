@@ -6,7 +6,7 @@ const getList = function*(first,offset,require) {
     list = yield sequelize.ArticleModel.findAll({
         limit: 10,
         offset: offset,
-        order : [['id','DESC']],
+        order : [['id']],
         where : require
     });
     if (first) {

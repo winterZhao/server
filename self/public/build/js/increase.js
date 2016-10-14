@@ -11,6 +11,7 @@ class Article {
 
 
         $('#transfer').on('click',()=>{this.transfer();});
+        $('#textarea-transfer').on('click',()=>{this.textareaTransfer();});
         $('#send').on('click',()=>{this.sendArticle();});
     }
     GetQueryString(name) {
@@ -47,9 +48,13 @@ class Article {
     transfer() {
         var text = $('#content').val();
         text = markdown.toHTML(text);
+        var t = text.replace('&lt;','<');
+        var s = t.replace('&gt;','>');
+        $('#text-content').html(s);
+    }
+    textareaTransfer() {
+        var text = $('#text-content').text();
         $('#html-content').html(text);
-        var t =  $('#html-content').text();
-        $('#html-content').html(t);
     }
     changeNav() {
         this.getMenu();

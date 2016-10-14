@@ -29,7 +29,7 @@
         <div class='content'>
             <h1>{#title}{.}{/title}</h1>
             <p style='padding-bottom:20px;margin-bottom:30px;border-bottom:1px dashed #ccc;'><span class='glyphicon glyphicon-time title='发布时间'></span>&nbsp;<span>{#gmt_modified}{.}{/gmt_modified}</span>{~s}{~s}<span class='glyphicon glyphicon-eye-open' title='阅读'></span>{~s}<span>{#view}{.}{/view}</span></p>
-            <p class="list-group-item-text" id='content'>{#content}{.}{/content}</p>
+            <p class="list-group-item-text" id='content'>{content}</p>
         </div>
     {/result}
 {/articalList}

@@ -82,11 +82,17 @@
        </div>
        <div class="form-group">
           <div class="col-sm-offset-1 col-sm-11">
-             <button id='transfer' type="button" class="btn btn-primary">转化</button>
+             <button id='transfer' type="button" class="btn btn-primary">markdown转化</button>
           </div>
        </div>
     </form>
-    <div id='html-content' style='margin-top:40;padding:0 20px;width:100%;overflow:scroll;min-height:300px;border:1px solid black;'></div>
+    <textarea id='text-content' style='margin-top:40px;padding:0 20px;width:100%;overflow:scroll;min-height:300px;border:1px solid black;'></textarea>
+    <div class="form-group">
+       <div class="col-sm-offset-1 col-sm-11">
+          <button id='textarea-transfer' type="button" class="btn btn-primary">textarea转化</button>
+       </div>
+    </div>
+    <div id='html-content' style='margin-top:40px;padding:0 20px;width:100%;overflow:scroll;min-height:300px;border:1px solid black;'></div>
     <div class="form-group "  style='margin-top:40px;'>
        <div class="col-sm-offset-1 col-sm-11">
           <button id='send' type="button" class="btn btn-primary">发布</button>

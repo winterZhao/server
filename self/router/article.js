@@ -5,6 +5,7 @@ const article = function*() {
     var reg = /\d+/g;
     var id = this.request.url.match(reg)[0];
 
+
     var result = sequelize.ArticleModel.findById(id)
             .then(function(result){
                 return result.increment('view',{by:1});
