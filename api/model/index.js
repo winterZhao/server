@@ -23,7 +23,6 @@ const MenuModel = sequelize.define('menu',{
     gmt_create: Sequelize.DATEONLY,
     gmt_modified: Sequelize.DATEONLY,
     nav : Sequelize.STRING(40),
-    nav_id : Sequelize.INTEGER,
     menu : Sequelize.STRING(100)
 },{
     underscored: true,
