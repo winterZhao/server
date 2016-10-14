@@ -48,6 +48,8 @@ class Article {
         var text = $('#content').val();
         text = markdown.toHTML(text);
         $('#html-content').html(text);
+        var t =  $('#html-content').text();
+        $('#html-content').html(t);
     }
     changeNav() {
         this.getMenu();
