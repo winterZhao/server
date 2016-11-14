@@ -51,11 +51,32 @@ const ArticleModel = sequelize.define('article',{
 );
 
 
+const GuanModel = sequelize.define('guan',{
+        gmt_create: Sequelize.DATEONLY,
+        gmt_modified: Sequelize.DATEONLY,
+        title: Sequelize.STRING(255),
+        content: Sequelize.TEXT,
+        author: Sequelize.STRING(255)
+
+    },{
+        underscored: true,
+        timestamps: false,
+        createdAt: 'gmt_create',
+        updatedAt: 'gmt_modified',
+        freezeTableName: true
+    }
+);
+
+
+
 NavModel.drop();
 MenuModel.drop();
 NavModel.sync();
 MenuModel.sync();
 ArticleModel.sync();
+
+GuanModel.drop();
+GuanModel.sync();
 
 co(function*(){
     for (let i = 0,r = NavConfig.length;i < r;i ++ ) {
@@ -79,7 +100,8 @@ co(function*(){
 
 
 module.exports = {
-    NavModel : NavModel,
-    MenuModel : MenuModel,
-    ArticleModel : ArticleModel
+    NavModel: NavModel,
+    MenuModel: MenuModel,
+    ArticleModel: ArticleModel,
+    GuanModel: GuanModel
 };
